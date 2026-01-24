@@ -1,68 +1,46 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <!-- Link the style sheet here -->
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <title>About Us</title>
 </head>
-<div>
-  <nav class="navbar navbar-expand-lg navbar-light" style="background-color:darkturquoise; height: 1in;">
-    <div class="container-fluid">
-      <h2 style="padding-right: 5%;">Dealerships</h2>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarText">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" aria-current="page" href="/">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" style="font-size: larger;" href="/about">About Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" style="font-size: larger;" href="/contact">Contact Us</a>
-          </li>
-        </ul>
-      </div>
+<body>
+    <div id="about-header" class="text-center mt-5">
+        <h1>About Us</h1>
+        <p>Welcome to Best Cars dealership, home to the best cars in North America. We deal in sale of domestic and imported cars at reasonable prices.</p>
     </div>
-  </nav>
-  
-    <div class="card" style="width: 80%;margin: auto; margin-top:5%;">
-      <div class="banner" name="about-header">
-      <!-- Insert header information here -->
-      </div>
-      <div style="display: flex;flex-direction: row; margin:auto">
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person1</p>
-          <p>Person1 Title</p>
-          <p class="card-text">Some text that explains the person1 in about 2 short sentences</p>
-          <p>person1@example.com</p>
-        </div>
-      </div>
 
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person2</p>
-          <p>Person2 Title</p>
-          <p class="card-text">Some text that explains the person2 in about 2 short sentences</p>
-          <p>person2@example.com</p>
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-4 text-center">
+                <div class="card p-3 shadow-sm">
+                    <img src="/static/person1.png" alt="Director" class="img-fluid rounded-circle mb-3" style="width:200px; height:200px; object-fit: cover; margin: 0 auto;">
+                    <h3>John Doe</h3>
+                    <p class="text-muted">Managing Director</p>
+                    <p>John has over 15 years of experience in the automotive industry and oversees all dealership operations. He is dedicated to ensuring every customer finds their dream car at the right price.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 text-center">
+                <div class="card p-3 shadow-sm">
+                    <img src="/static/person2.png" alt="Sales Manager" class="img-fluid rounded-circle mb-3" style="width:200px; height:200px; object-fit: cover; margin: 0 auto;">
+                    <h3>Jane Smith</h3>
+                    <p class="text-muted">Sales Manager</p>
+                    <p>Jane leads our sales team with a passion for excellence and customer satisfaction. She specializes in luxury imports and helps streamline the financing process for all our clients.</p>
+                </div>
+            </div>
+            
+            <div class="col-md-4 text-center">
+                <div class="card p-3 shadow-sm">
+                    <img src="/static/person3.png" alt="Service Expert" class="img-fluid rounded-circle mb-3" style="width:200px; height:200px; object-fit: cover; margin: 0 auto;">
+                    <h3>Robert Wilson</h3>
+                    <p class="text-muted">Lead Technician</p>
+                    <p>Robert ensures that every vehicle on our lot meets the highest safety and performance standards. He manages our service department and provides expert technical advice to our buyers.</p>
+                </div>
+            </div>
         </div>
-      </div>
-
-      <div class="card" style="width: 30%;">
-        <img class="card-img-top" src="/static/person.png" alt="Card image">
-        <div class="card-body">
-          <p class="title">Person3</p>
-          <p>Person3 Title</p>
-          <p class="card-text">Some text that explains the person3 in about 2 short sentences</p>
-          <p>person3@example.com</p>
-        </div>
-      </div>
     </div>
-    </div>
-    </div>
-    
-</div>
-
+</body>
 </html>
