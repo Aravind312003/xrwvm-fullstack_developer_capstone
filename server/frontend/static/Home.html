@@ -6,8 +6,31 @@
   <link rel="stylesheet" href="static/bootstrap.min.css">
 <script>
 
+// --- FINAL LOGOUT FUNCTION ---
 const logout = async (e) => {
-//Include the code for logout here.
+  // Prevent default link behavior
+  if(e) e.preventDefault();
+
+  // Build Logout URL and Make GET request to logout endpoint
+  let logout_url = window.location.origin + "/djangoapp/logout";
+  
+  const res = await fetch(logout_url, {
+    method: "GET",
+  });
+
+  const json = await res.json();
+  if (json) {
+    // Clear session storage and reload page
+    let username = sessionStorage.getItem('username');
+    sessionStorage.removeItem('username');
+    
+    // Notify user of logout and redirect
+    alert("Logging out " + username + "...");
+    window.location.href = window.location.origin;
+    window.location.reload(); 
+  } else {
+    alert("The user could not be logged out.");
+  }
 };
 
 let checkSession = ()=>{
@@ -16,11 +39,11 @@ let checkSession = ()=>{
   if (curr_user && curr_user !== "") {
     document.getElementById("loginlogout").innerHTML = 
     '<span class="homepage_links">' + curr_user +'</span>' +
-    '<a class="homepage_links" onclick="logout()" href="/">Logout</a>'
+    '<a class="homepage_links" onclick="logout()" style="cursor: pointer; margin-left:10px;">Logout</a>'
   } else {
     document.getElementById("loginlogout").innerHTML = 
     '<a class="homepage_links" href="/login">Login</a>'+
-    '<a class="homepage_links"  href="/register">Register</a>'
+    '<a class="homepage_links" style="margin-left:10px;" href="/register">Register</a>'
   }
  }
 </script>
@@ -47,7 +70,7 @@ let checkSession = ()=>{
       <span class="navbar-text">
         <div class="loginlink" id="loginlogout">
         </div>
-        </span>
+      </span>
     </div>
   </div>
 </nav>
@@ -55,7 +78,7 @@ let checkSession = ()=>{
 <div class="card" style="width: 50%;margin-top: 50px;align-self: center;">
   <img src="static/car_dealership.jpg" class="card-img-top" alt="...">
   <div class="banner">
-    <h5>Welcome to our Dealerships!</h5>
+    <h5 style="padding: 10px;">Welcome to our Dealerships!</h5>
     <a href="/dealers" class="btn" style="background-color: aqua;margin:10px">View Dealerships</a>
   </div>
 </div>

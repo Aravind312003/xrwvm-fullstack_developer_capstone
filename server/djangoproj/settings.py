@@ -59,7 +59,11 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         # UPDATE: Pointing to the frontend/static directory as per instructions
-        'DIRS': [os.path.join(BASE_DIR, 'frontend/static')],
+                'DIRS': [
+            os.path.join(BASE_DIR, 'frontend/static'),
+            os.path.join(BASE_DIR, 'frontend/build'),
+            os.path.join(BASE_DIR, 'frontend/build/static'),
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -114,6 +118,8 @@ MEDIA_URL = '/media/'
 # UPDATE: Added the path for the Django application to look for static files
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'frontend/static'),
+    os.path.join(BASE_DIR, 'frontend/build'),
+    os.path.join(BASE_DIR, 'frontend/build/static'),
 ]
 
 # Default primary key field type
