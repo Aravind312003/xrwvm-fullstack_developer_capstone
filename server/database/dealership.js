@@ -3,11 +3,11 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const dealerships = new Schema({
-	id: {
+  id: {
     type: Number,
     required: true,
-	},
-	city: {
+  },
+  city: {
     type: String,
     required: true
   },
@@ -15,6 +15,7 @@ const dealerships = new Schema({
     type: String,
     required: true
   },
+  st: { type: String, required: true },
   address: {
     type: String,
     required: true
@@ -24,11 +25,11 @@ const dealerships = new Schema({
     required: true
   },
   lat: {
-    type: String,
+    type: String, // As per your update
     required: true
   },
   long: {
-    type: String,
+    type: String, // As per your update
     required: true
   },
   short_name: {
