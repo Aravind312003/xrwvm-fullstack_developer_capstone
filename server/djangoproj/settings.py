@@ -20,12 +20,17 @@ SECRET_KEY = 'django-insecure-ccow$tz_=9%dxu4(0%^(z%nx32#s@(zt9$ih@)5l54yny)wm-0
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# UPDATE: Added localhost and the generic placeholder for your workspace URL
-# Replace 'your-application-url-here' with the actual URL from your browser address bar
-ALLOWED_HOSTS = ['localhost', 'https://aravinddeepa-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+# --- UPDATE: CORRECTED ALLOWED_HOSTS (Removed https:// and fixed domain) ---
+ALLOWED_HOSTS = [
+    'localhost', 
+    '127.0.0.1',
+    'aravinddeepa-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+]
 
-# UPDATE: Added CSRF trusted origins for the lab environment
-CSRF_TRUSTED_ORIGINS = ['https://aravinddeepa-8000.theianext-0-labs-prod-misc-tools-us-east-0.proxy.cognitiveclass.ai']
+# --- UPDATE: CORRECTED CSRF_TRUSTED_ORIGINS (Must include https://) ---
+CSRF_TRUSTED_ORIGINS = [
+    'https://aravinddeepa-8000.theiadockernext-0-labs-prod-theiak8s-4-tor01.proxy.cognitiveclass.ai'
+]
 
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': [],
@@ -58,8 +63,7 @@ ROOT_URLCONF = 'djangoproj.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        # UPDATE: Pointing to the frontend/static directory as per instructions
-                'DIRS': [
+        'DIRS': [
             os.path.join(BASE_DIR, 'frontend/static'),
             os.path.join(BASE_DIR, 'frontend/build'),
             os.path.join(BASE_DIR, 'frontend/build/static'),
